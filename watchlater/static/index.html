@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Turn your Watch Later backlog into a focused learning queue.">
+    <title>Later, Intentionally</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%2317211b'/><path d='M38 27v46l38-23z' fill='%23d8ff45'/></svg>">
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="/">LATER<span>/</span>INTENTIONALLY</a>
+      <span class="status"><i></i> Local-first</span>
+    </header>
+    <main>
+      <section class="hero">
+        <div>
+          <p class="eyebrow">YOUR LEARNING INBOX</p>
+          <h1>Watch less.<br><em>Learn more.</em></h1>
+          <p class="lede">A transparent recommendation engine for the videos you meant to watch.</p>
+        </div>
+        <div class="time-card">
+          <label for="minutes">I have</label>
+          <div><input id="minutes" type="number" min="1" max="480" value="25"><span>minutes</span></div>
+          <button id="refresh">Build my queue <b>→</b></button>
+        </div>
+      </section>
+
+      <section class="metrics" aria-label="Backlog overview">
+        <article><small>IN YOUR INBOX</small><strong id="pending">—</strong><span>videos waiting</span></article>
+        <article><small>TIME TO CLEAR</small><strong id="hours">—</strong><span>hours of learning</span></article>
+        <article><small>COMPLETED</small><strong id="completed">—</strong><span>videos finished</span></article>
+      </section>
+
+      <section id="viewer" class="viewer" aria-labelledby="viewer-title">
+        <div class="viewer-copy">
+          <p class="eyebrow">FOCUS MODE</p>
+          <h2 id="viewer-title">One video. No feed.</h2>
+          <p id="viewer-description">Choose a recommendation below. It will play here without opening YouTube’s browse experience.</p>
+          <div id="now-playing" class="now-playing" hidden>
+            <small>NOW PLAYING</small>
+            <strong id="playing-title"></strong>
+            <span id="playing-meta"></span>
+            <button id="finish-video">Finish and remove from queue</button>
+          </div>
+        </div>
+        <div class="player-shell">
+          <div id="player-placeholder">
+            <span class="play-mark">▶</span>
+            <p>Select a video from your focused queue</p>
+          </div>
+          <iframe
+            id="video-player"
+            title="Selected YouTube video"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            hidden></iframe>
+        </div>
+      </section>
+
+      <section class="queue">
+        <div class="section-title">
+          <div><p class="eyebrow">RECOMMENDED NEXT</p><h2>Your focused queue</h2></div>
+          <p>Every score is inspectable. No engagement bait.</p>
+        </div>
+        <div id="video-list" class="video-list" aria-live="polite">
+          <div class="empty">Building your focused queue…</div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <span>Watch Later Intelligence</span>
+      <span>Explainable by design · No discovery feed</span>
+    </footer>
+    <script src="/app.js" defer></script>
+  </body>
+</html>

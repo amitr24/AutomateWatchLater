@@ -1,0 +1,5 @@
+video_id,title,channel,duration_seconds,added_at,category,priority
+ml001,Calibration for Reliable Machine Learning,ML Systems Lab,1080,2026-06-01T14:00:00Z,machine-learning,5
+sys002,Designing Durable Job Queues,Systems Weekly,2100,2026-05-14T09:30:00Z,distributed-systems,4
+bio003,Transformers for Biomedical NLP,BioNLP Seminar,2700,2026-04-20T16:00:00Z,biomedical-nlp,5
+ux004,Why Recommendation Interfaces Fail,Product Research,720,2026-07-10T12:00:00Z,product,3
